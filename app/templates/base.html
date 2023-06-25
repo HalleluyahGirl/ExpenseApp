@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reminder Expense App</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Reminder Expense App</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('reminder') }}">Reminders</a></li>
+          <li><a href="{{ url_for('expense') }}">Expenses</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="content">{% block content %} {% endblock %}</div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Reminder and Expense App</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/reminders">Reminders</a></li>
+        <li><a href="/expenses">Expenses</a></li>
+      </ul>
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>

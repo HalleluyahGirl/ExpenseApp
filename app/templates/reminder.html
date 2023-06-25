@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Create Reminder</h2>
+<form method="POST" action="/reminders">
+  <input type="text" name="text" placeholder="Enter reminder text" />
+  <button type="submit">Create</button>
+</form>
+<hr />
+<h2>Reminders</h2>
+<ul>
+  {% for reminder in reminders %}
+  <li>
+    {{ reminder.text }}
+    <form method="POST" action="/reminders/{{ reminder.id }}">
+      <button formaction="/reminders/{{ reminder.id }}/edit" type="submit">
+        Edit
+      </button>
+      <button formaction="/reminders/{{ reminder.id }}/delete" type="submit">
+        Delete
+      </button>
+    </form>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
