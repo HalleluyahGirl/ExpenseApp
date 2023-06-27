@@ -1,33 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-<h2>Create Expense</h2>
-<form method="POST" action="/expenses">
-  <input type="text" name="name" placeholder="Enter expense name" />
-  <input type="number" name="amount" placeholder="Enter expense amount" />
-  <button type="submit">Create</button>
-</form>
-<hr />
 <h2>Expenses</h2>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Amount</th>
-    <th>Actions</th>
-  </tr>
-  {% for expense in expenses %}
-  <tr>
-    <td>{{ expense.name }}</td>
-    <td>{{ expense.amount }}</td>
-    <td>
-      <form method="POST" action="/expenses/{{ expense.id }}">
-        <button formaction="/expenses/{{ expense.id }}/edit" type="submit">
-          Edit
-        </button>
-        <button formaction="/expenses/{{ expense.id }}/delete" type="submit">
-          Delete
-        </button>
-      </form>
-    </td>
-  </tr>
-  {% endfor %}
-</table>
+<p>List of expenses:</p>
+<ul>
+  <li>Expense 1</li>
+  <li>Expense 2</li>
+  <li>Expense 3</li>
+</ul>
 {% endblock %}

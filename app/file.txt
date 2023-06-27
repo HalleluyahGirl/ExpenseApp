@@ -1,0 +1,17 @@
+App/
+    static/
+        css/
+            index.css
+        js/
+            main.js
+    templates/
+        index.html
+        category.html
+        base.html
+        expense.html
+        login.html
+        register.html        
+        index.html
+
+    app.py
+    /venv/
